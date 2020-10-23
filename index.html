@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
+
+    <title>Paw Paradise</title>
+</head>
+
+<body>
+
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-2 col-sm-3 col-md-2 align-self-center">
+                    <img src="img/Orange-paw-icon.png" class="img-fluid" />
+                 </div>
+                <div class="col col-md-8 mx-auto align-self-center">
+                    <h1>Welcome to Paw Paradise </h1>
+                    <h2>a place to exchange pet items and pet services</h2>
+                </div>
+                <div class="col-md-2 col-xl-2">
+                    <!-- <a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a> -->
+                    <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#reserveModal"  >Post</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="modal fade" id="reserveModal" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h3 class="modal-title ">Reserve a Campsite</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="reserveForm">
+                        <div class="form-group row">
+                            <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
+                            <div class="col">
+                                <select class="form-control" name="numCampers" id="numCampers">
+                                    <option>Select...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-sm-6" for="date">Date</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" type="date" id="date" name="date" placeholder="mm/dd/yy">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-6 col-form-label">Campsite Type</label>
+                            <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-success active">
+                                    <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked> Tent
+                                  </label>
+                                  <label class="btn btn-primary">
+                                    <input type="radio" name="siteType" id="siteRV" autocomplete="off"> RV
+                                  </label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+    </div>
+
+    <!-- Dark themed navbar that automatically collapses at the 
+        small breakpoint and that sticks to top of page when scrolling -->
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="img/Guacamole-green-paw-icon.png" height="30" width="30" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nucampNavbar">
+                <ul class="navbar-nav">  <!-- Use the Font-Awesome icons in the navbar -->
+                    <li class="nav-item active"><a class="nav-link" href="#"> <i class="fa fa-home fa-lg"></i> home </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> <i class="fa fa-group fa-lg"></i> groups </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> <i class="fa fa-info fa-lg"></i> about paw paradise </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> <i class="fa fa-question fa-lg"></i> faq </a></li>
+                </ul>
+                <span class="navbar-text ml-auto">
+                    <a role="button" data-toggle="modal" data-target="#loginModal">
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
+                </span>
+            </div>
+        </div>
+    </nav>
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login</h3> 
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginEmail">Email address</label>
+                                    <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <label class="sr-only" for="loginPassword">Password</label>
+                                    <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                                </div>
+                                <div class="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label"> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-content">
+            <div class="col-md-8 mx-auto pb-3">
+                <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#homeCarousel" data-slide-to="1"></li>
+                        <li data-target="#homeCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="img/black-cat-black-keyboard.jpg" alt="Breadcrumb Trail Campground" />
+                            <div class="carousel-caption">
+                                <h3>Does kitty need a carrier</h3>
+                                <p class="d-none d-sm-block">If your cat needs a carrier, why buy one. Someone in your area has one they no longer need.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="img/Horse_5883702.jpg" alt="React Lake Campground" />
+                            <div class="carousel-caption">
+                                <h3>Want to offer horseback rides?</h3>
+                                <p class="d-none d-sm-block">Offer horseback rides in exchange for horse care or stall help.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="img/two-happy-dogs-with-bows.jpg" alt="Chrome River Campground" />
+                            <div class="carousel-caption">
+                                <h3>Are you a dog lover?</h3>
+                                <p class="d-none d-sm-block">Offer to dog sit or walk your neighbors' dogs.</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-light btn-sm" id="carouselButton">
+                            <i class="fa fa-pause"></i>
+                        </button>
+                </div>
+                <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+        <div class="row row-content">
+            <div class="col">
+                <!-- ****** Tab navigation ****** -->
+                 <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" href="#allitemstab" role="tab" data-toggle="tab">All items</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#offerstab" role="tab" data-toggle="tab">Offers</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#wantstab" role="tab" data-toggle="tab">Wants</a>
+                    </li>
+                </ul> 
+                <div class="tab-content">  
+                    <div role="tabpanel" class="tab-pane fade show active" id="allitemstab">
+                        <div id="accordionAllitems">
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-success font-weight-bolder" data-toggle="collapse" data-target="#allitemscard1">
+                                            Offer <small class="text-body">Horseback riding</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse show" id="allitemscard1" data-parent="#accordionAllitems">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">If you are interested in horses and want to try riding then give me a call. 
+                                                This is an introduction to horseback riding. If you like it and want to pursue more then we can make
+                                                some arrangements. Maybe help care for the horses or clean stalls in exchange for riding.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="collapsed text-success font-weight-bolder" data-toggle="collapse" data-target="#allitemscard2">
+                                            Offer <small class="text-body">Dog run</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="allitemscard2" data-parent="#accordionAllitems">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">Dog run for the yard. Wire cage 6' tall, 24' long, 24' wide. You pick up; no delivery!</p>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="collapsed text-danger font-weight-bolder" data-toggle="collapse" data-target="#allitemscard3">
+                                            Want <small class="text-body">Dog food</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="allitemscard3" data-parent="#accordionAllitems">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">The current COVID-19 pandemic has me seeking help providing food for my 2 pups. My pups aren't picky eaters so any brand, wet or dry food, is appreciated.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="collapsed text-danger font-weight-bolder" data-toggle="collapse" data-target="#allitemscard4">
+                                            Want <small class="text-body">Medium dog crate</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="allitemscard4" data-parent="#accordionAllitems">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">Traveling across country with my terrier. I need a medium dog crate that I can easily break down and set up in hotel room.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="collapsed text-danger font-weight-bolder" data-toggle="collapse" data-target="#allitemscard5">
+                                            Want <small class="text-body">Blankets to use as bedding</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="allitemscard5" data-parent="#accordionAllitems">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">I service a pet rescue and we have a need for blankets to be used as bedding/padding for dogs/cats.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="offerstab">
+                        <div id="accordionOffers">
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-success font-weight-bolder" data-toggle="collapse" data-target="#offerscard1">
+                                            Offer <small class="text-body">Horseback riding </small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse show" id="offerscard1" data-parent="#accordionOffers">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">If you are interested in horses and want to try riding then give me a call. 
+                                                This is an introduction to horseback riding. If you like it and want to pursue more then we can make
+                                                some arrangements. Maybe help care for the horses or clean stalls in exchange for riding.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard2">
+                                            Offer <small class="text-body">Dog walking</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="offerscard2" data-parent="#accordionOffers">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">Offer to walk your dog when needed in exchange for you walking 
+                                                my dog when needed! Some days I can't get out of bed and need someone to walk my pooch. 
+                                                Other days I'm glad to return the favor.</p>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard3">
+                                            Offer <small class="text-body">Pet sitting</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="offerscard3" data-parent="#accordionOffers">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">Will pet sit for up to a week. Will sit with you cat or dog in your home for up to 3 times per day up to a week.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard4">
+                                            Offer <small class="text-body">Dog run</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="offerscard4" data-parent="#accordionOffers">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">Dog run for the yard. Wire cage 6' tall, 24' long, 24' wide. You pick up; no delivery.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard5">
+                                            Offer <small class="text-body">Large dog crate</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="offerscard5" data-parent="#accordionOffers">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">Metal dog crate large enough for our black lab. approx 36"L x 24"W x 24"H.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane fade" id="wantstab">
+                        <div id="accordionWants">
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4 >
+                                        <a class="text-danger font-weight-bolder" data-toggle="collapse" data-target="#wantscard1">
+                                            Want <small class="text-body">Dog food</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse show" id="wantscard1" data-parent="#accordionWants">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">The current COVID-19 pandemic has me seeking help providing food for my 2 pups. My pups aren't picky eaters so any brand, wet or dry food, is appreciated.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard2">
+                                            Want <small class="text-body">Blankets for warmth</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="wantscard2" data-parent="#accordionWants">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">I manage a horse rescue and we need blankets to provide warmth for the horses during cold weather.!</p>
+                                       </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard3">
+                                            Want <small class="text-body">Blankets to use as bedding</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="wantscard3" data-parent="#accordionWants">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">I service a pet rescue and we have a need for blankets to be used as bedding/padding for dogs/cats.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard4">
+                                            Want <small class="text-body">Medium dog crate</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="wantscard4" data-parent="#accordionWants">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">Traveling across country with my terrier. I need a medium dog crate that I can easily break down and set up in hotel room.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div role="tab" class="card-header">
+                                    <h4>
+                                        <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard5">
+                                            Want <small class="text-body">Small cat carrier</small>
+                                        </a>
+                                    </h4>
+                                    <div class="collapse" id="wantscard5" data-parent="#accordionWants">
+                                        <div class="card-body">
+                                            <p class="d-none d-sm-block">Small cat carrier for a 9mth old tabby.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- <div class="row row-content align-items-center">
+            <div class="col-sm-4 order-sm-last col-md-3">
+                <h2 class="text-sm-right">Discover & Review</h2>
+            </div>
+            <div class="col">
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />
+                    <div class="media-body align-self-center">
+                        <h3>Our Campsites</h3>
+                        <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row  row-content align-items-center">
+            <div class="col-sm-4 col-md-3">
+                <h2>Featured Campsites</h2>
+            </div>
+            <div class="col">
+                <div class="media">
+                    <div class="media-body align-self-center">
+                        <h3>React Lake Campground</h3>
+                        <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
+                    </div>
+                    <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="React Lake" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content align-items-center">
+            <div class="col-sm-4 order-sm-last col-md-3">
+                <h2 class="text-sm-right">Our Community Partners</h2>
+            </div>
+            <div class="col">
+                <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
+                    <div class="media-body align-self-center">
+                        <h3>Bootstrap Outfitters</h3>
+        				<p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+<!--        <div class="row row-content align-items-center">
+            <div class="col-sm-6 mx-auto">
+                <div class="card">
+                    <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
+                    <div class="card-body">
+                         <form id="reserveForm">
+                            <div class="form-group row">
+                                <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
+                                <div class="col">
+                                    <select class="form-control" name="numCampers" id="numCampers">
+                                        <option>Select...</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-sm-6" for="date">Date</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="date" id="date" name="date" placeholder="mm/dd/yy">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-sm-2 offset-1">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="aboutus.html">About</a></li>
+                        <li><a href="#">Sites</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-5 text-center">
+                    <h5>Social</h5>  <!-- Use the Font-Awesome icons for social buttons -->
+                    <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                    <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                </div>
+                <div class="col-sm-4 text-center">  <!-- Use the Font-Awesome icons for contact buttons -->
+                    <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i> 1-206-555-1234</a><br />
+                    <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i class="fa fa-envelope-o"></i> campsites@nucamp.co</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+    
+    <!-- <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script> -->
+    
+</body>
+
+</html>
