@@ -30,7 +30,7 @@
                     <h2>a place to exchange pet items and pet services</h2>
                 </div>
                 <div class="col-md-2 col-xl-2">
-                    <!-- <a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a> -->
+                    <!-- <a href="#postModal" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a> -->
                     <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#postModal"  >Post</a>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form id="reserveForm">
+                    <form id="postForm">
                         <!-- <h1>Enter the details of your item or pet service</h1> -->
                         <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post" enctype="multipart/form-data">
                             <fieldset>
@@ -241,11 +241,12 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" data-toggle="collapse" data-target="#allitemscard1">
-                                            Offer <small class="text-body">Horseback riding</small>
+                                            Offer <small class="text-body">Service: Horseback riding</small>
                                         </a>
                                     </h4>
                                     <div class="collapse show" id="allitemscard1" data-parent="#accordionAllitems">
                                         <div class="card-body">
+                                            <img class="d-flex mr-3 img-thumbnail" width="250" src="img/Horse_5883702.jpg" alt="Post Image" />
                                             <p class="d-none d-sm-block">If you are interested in horses and want to try riding then give me a call. 
                                                 This is an introduction to horseback riding. If you like it and want to pursue more then we can make
                                                 some arrangements. Maybe help care for the horses or clean stalls in exchange for riding.</p>
@@ -257,7 +258,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="collapsed text-success font-weight-bolder" data-toggle="collapse" data-target="#allitemscard2">
-                                            Offer <small class="text-body">Dog run</small>
+                                            Offer <small class="text-body">Item: Dog run</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="allitemscard2" data-parent="#accordionAllitems">
@@ -271,7 +272,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="collapsed text-danger font-weight-bolder" data-toggle="collapse" data-target="#allitemscard3">
-                                            Want <small class="text-body">Dog food</small>
+                                            Want <small class="text-body">Item: Dog food</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="allitemscard3" data-parent="#accordionAllitems">
@@ -285,7 +286,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="collapsed text-danger font-weight-bolder" data-toggle="collapse" data-target="#allitemscard4">
-                                            Want <small class="text-body">Medium dog crate</small>
+                                            Want <small class="text-body">Item: Medium dog crate</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="allitemscard4" data-parent="#accordionAllitems">
@@ -299,7 +300,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="collapsed text-danger font-weight-bolder" data-toggle="collapse" data-target="#allitemscard5">
-                                            Want <small class="text-body">Blankets to use as bedding</small>
+                                            Want <small class="text-body">Item: Blankets to use as bedding</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="allitemscard5" data-parent="#accordionAllitems">
@@ -318,7 +319,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" data-toggle="collapse" data-target="#offerscard1">
-                                            Offer <small class="text-body">Horseback riding </small>
+                                            Offer <small class="text-body">Service: Horseback riding </small>
                                         </a>
                                     </h4>
                                     <div class="collapse show" id="offerscard1" data-parent="#accordionOffers">
@@ -335,7 +336,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard2">
-                                            Offer <small class="text-body">Dog walking</small>
+                                            Offer <small class="text-body">Service: Dog walking</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="offerscard2" data-parent="#accordionOffers">
@@ -351,7 +352,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard3">
-                                            Offer <small class="text-body">Pet sitting</small>
+                                            Offer <small class="text-body">Offer: Pet sitting</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="offerscard3" data-parent="#accordionOffers">
@@ -365,7 +366,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard4">
-                                            Offer <small class="text-body">Dog run</small>
+                                            Offer <small class="text-body">Item: Dog run</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="offerscard4" data-parent="#accordionOffers">
@@ -379,7 +380,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard5">
-                                            Offer <small class="text-body">Large dog crate</small>
+                                            Offer <small class="text-body">Item: Large dog crate</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="offerscard5" data-parent="#accordionOffers">
@@ -398,7 +399,7 @@
                                 <div role="tab" class="card-header">
                                     <h4 >
                                         <a class="text-danger font-weight-bolder" data-toggle="collapse" data-target="#wantscard1">
-                                            Want <small class="text-body">Dog food</small>
+                                            Want <small class="text-body">Item: Dog food</small>
                                         </a>
                                     </h4>
                                     <div class="collapse show" id="wantscard1" data-parent="#accordionWants">
@@ -412,7 +413,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard2">
-                                            Want <small class="text-body">Blankets for warmth</small>
+                                            Want <small class="text-body">Item: Blankets for warmth</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="wantscard2" data-parent="#accordionWants">
@@ -426,7 +427,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard3">
-                                            Want <small class="text-body">Blankets to use as bedding</small>
+                                            Want <small class="text-body">Item: Blankets to use as bedding</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="wantscard3" data-parent="#accordionWants">
@@ -440,7 +441,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard4">
-                                            Want <small class="text-body">Medium dog crate</small>
+                                            Want <small class="text-body">Item: Medium dog crate</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="wantscard4" data-parent="#accordionWants">
@@ -454,7 +455,7 @@
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard5">
-                                            Want <small class="text-body">Small cat carrier</small>
+                                            Want <small class="text-body">Item: Small cat carrier</small>
                                         </a>
                                     </h4>
                                     <div class="collapse" id="wantscard5" data-parent="#accordionWants">
@@ -520,7 +521,7 @@
                 <div class="card">
                     <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
                     <div class="card-body">
-                         <form id="reserveForm">
+                         <form id="postForm">
                             <div class="form-group row">
                                 <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
                                 <div class="col">
