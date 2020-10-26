@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
@@ -32,58 +31,87 @@
                 </div>
                 <div class="col-md-2 col-xl-2">
                     <!-- <a href="#reserveForm" role="button" class="btn btn-lg btn-info" data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a> -->
-                    <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#reserveModal"  >Post</a>
+                    <a role="button" class="btn btn-lg btn-info" data-toggle="modal" data-target="#postModal"  >Post</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="modal fade" id="reserveModal" role="dialog">
+    <div class="modal fade" id="postModal" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-info text-white">
-                    <h3 class="modal-title ">Reserve a Campsite</h3>
+                    <h3 class="modal-title ">Create Post</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form id="reserveForm">
-                        <div class="form-group row">
-                            <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
-                            <div class="col">
-                                <select class="form-control" name="numCampers" id="numCampers">
-                                    <option>Select...</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
+                        <!-- <h1>Enter the details of your item or pet service</h1> -->
+                        <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post" enctype="multipart/form-data">
+                            <fieldset>
+                                <legend>Details of your item/service:</legend>
+                                <div > <!-- class="row" -->
+                                    <label>Are you <u>offering</u> an item/service or do you <u>want</u> an item/service: </label> 
+                                    <div > <!-- class="col-sm-3" -->
+                                        <input type="radio" id="radioOffer" name=“wantOffer” value="offer" required/>
+                                        <label for="radioOffer">Offer</label>
+                                        <input type="radio" id="radioWant" name=“wantOffer” value="want"  />
+                                        <label for="radioWant">Want</label>
+                                    </div>
+                                    <label>Is this post for an item, or a service: </label> 
+                                    <div > <!-- class="col-sm-3" -->
+                                        <input type="radio" id="radioItem" name=“itemService” value="item" required/>
+                                        <label for="radioItem">Item</label>
+                                        <input type="radio" id="radioService" name=“itemService” value="service" />
+                                        <label for="radioService">Service</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- <label for="itemdetails">Description:</label>  -->
+                                    <textarea class="form-control" cols="80" rows="5" id="itemdetails" name="itemdetails" placeholder="Enter the details of your item or service" required></textarea>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <!-- <legend>Your Image</legend> -->
+                                <div>
+                                    <label for="avatar">Upload Your Image:</label>
+                                    <input type="file" id="avatar" name="avatar"/> <!-- required -->
+                                </div>
+                                Image Preview
+                                <img id="preview" class="img-fluid" width="250" />
+                            </fieldset>
+                            
+                            <fieldset>
+                                <legend>Your Contact Information</legend>
+                                <div>
+                                    <label for="name" >Name</label>
+                                    <input type= "text" id="name" name="name" placeholder="Your full name" />
+                                </div>
+                                <div>
+                                    <label>Contact method(s):</label>
+                                    <input type="checkbox" name="contact" id="emailCheckbox" value="email" />
+                                    <label for="emailCheckbox">Email</label>
+                                    <input type="checkbox" name="contact" id="phoneCheckbox" value="phone" />
+                                    <label for="phoneCheckbox">Phone</label>
+                                </div>
+                                <div>
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required />
+                                </div>
+                                <div>
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" name="phone" />
+                                </div>
+                                <div>
+                                    <label for="address">City/Neighborhood:</label>
+                                    <textarea cols="40" id="address" name="address" placeholder="What area, city, or neighborhood are you in or near?" required></textarea>
+                                </div>
+                            </fieldset>
+                            <div>
+                                <input type="submit" />
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-form-label col-sm-6" for="date">Date</label>
-                            <div class="col-sm-6">
-                                <input class="form-control" type="date" id="date" name="date" placeholder="mm/dd/yy">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-6 col-form-label">Campsite Type</label>
-                            <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-success active">
-                                    <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked> Tent
-                                  </label>
-                                  <label class="btn btn-primary">
-                                    <input type="radio" name="siteType" id="siteRV" autocomplete="off"> RV
-                                  </label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col">
-                                <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-primary">Search</button>
-                            </div>
-                        </div>
+                        </form>
+                        <script src="https://url.nucamp.co/datingjs"></script>
                     </form>
                 </div>
             </div>
@@ -94,7 +122,7 @@
         small breakpoint and that sticks to top of page when scrolling -->
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="img/Guacamole-green-paw-icon.png" height="30" width="30" /></a>
+            <a class="navbar-brand" href="#"><img src="img/Orange-paw-icon.png" height="30" width="30" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
