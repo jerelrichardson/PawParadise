@@ -34,7 +34,7 @@ header {
 }
 
 .site-footer{
-    background-image: linear-gradient($color-dark, white);
+    background-image: linear-gradient(white, $color-dark);
     padding: 20px 0;
 }
 
@@ -92,7 +92,7 @@ fieldset{
     border: 5px solid darkblue;
     border-radius: 10px;
     margin-bottom: 5px;
-    width: 750px;
+    //width: 750px;
 }
 
 .divpad {

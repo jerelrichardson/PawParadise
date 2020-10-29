@@ -48,6 +48,7 @@
                     <form id="postForm">
                         <!-- <h1>Enter the details of your item or pet service</h1> -->
                         <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post" enctype="multipart/form-data">
+                        <!-- <form action="/upload" method="post" enctype="multipart/form-data"> -->
                             <fieldset>
                                 <legend>Details of your item/service:</legend>
                                 <div class="divpad"> <!-- class="row" -->
@@ -101,12 +102,13 @@
                                     <input type="tel" id="phone" name="phone" />
                                 </div>
                                 <div class="divpad">
-                                    <label for="address">City/Neighborhood:</label>
-                                    <textarea cols="40" id="address" name="address" placeholder="What area, city, or neighborhood are you in or near?" required></textarea>
+                                    <label for="city">City/Neighborhood:</label>
+                                    <textarea cols="40" id="city" name="city" placeholder="What area, city, or neighborhood are you in or near?" required></textarea>
+                                    <!-- <input type="textarea" cols="40" id="city" name="city" placeholder="What area, city, or neighborhood are you in or near?" required /> -->
                                 </div>
                             </fieldset>
                             <div>
-                                <input class="btn btn-info" type="submit" value="Submit"/>
+                                <input class="btn btn-info" type="submit" value="submit"/>
                             </div>
                         </form>
                         <script src="https://url.nucamp.co/datingjs"></script>
@@ -142,7 +144,7 @@
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-info text-white">
                     <h3 class="modal-title">Login</h3> 
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
@@ -284,6 +286,7 @@
                                     </h4>
                                     <div class="collapse" id="allitemscard2" data-parent="#accordionAllitems">
                                         <div class="card-body">
+                                            <img class="d-flex mr-3 img-thumbnail" width="250" src="img/large-dog-run.jpg" alt="Post Image" />
                                             <p class="d-sm-block">Dog run for the yard. Wire cage 6' tall, 24' long, 24' wide. You pick up; no delivery!</p>
                                             <div class="container-fluid">  
                                                 <div class="row">
@@ -541,6 +544,7 @@
                                     </h4>
                                     <div class="collapse" id="offerscard4" data-parent="#accordionOffers">
                                         <div class="card-body">
+                                            <img class="d-flex mr-3 img-thumbnail" width="250" src="img/large-dog-run.jpg" alt="Post Image" />
                                             <p class="d-sm-block">Dog run for the yard. Wire cage 6' tall, 24' long, 24' wide. You pick up; no delivery.</p>
                                             <div class="container-fluid">  
                                                 <div class="row">
@@ -576,6 +580,7 @@
                                     </h4>
                                     <div class="collapse" id="offerscard5" data-parent="#accordionOffers">
                                         <div class="card-body">
+                                            <img class="d-flex mr-3 img-thumbnail" width="250" src="img/dog-crate-123.jpg" alt="Post Image" />
                                             <p class="d-sm-block">Metal dog crate large enough for our black lab. approx 36"L x 24"W x 24"H.</p>
                                             <div class="container-fluid">  
                                                 <div class="row">
@@ -903,6 +908,7 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/app.js"></script>
     <!-- endbuild -->
     
     <!-- <script>
