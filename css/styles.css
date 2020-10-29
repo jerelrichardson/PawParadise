@@ -2,15 +2,14 @@ body {
   font-family: "Open Sans", sans-serif; }
 
 h1, h2, h3 {
-  font-family: "Lobster", cursive;
-  font-size: 20px;
-  padding: 0px 0; }
+  font-family: "Lobster", cursive; }
 
-h2 {
-  color: #3046C5; }
+header h1 {
+  color: orange; }
 
 header h2 {
-  color: #CEC8FF; }
+  font-size: larger;
+  color: #551A8B; }
 
 .site-footer {
   background-image: linear-gradient(#CEC8FF, white);
@@ -20,22 +19,19 @@ header h2 {
   margin: 0;
   /* Remove space between Jumbotron surrounding elements */
   padding: 10px;
-  background-image: linear-gradient(to right, #5637dd, #3046C5, #60106b);
+  background-image: linear-gradient(to right, #38bb33, #38bb33, #CCFFCC);
   color: white; }
 
 .row-content {
-  /* padding: 50px 0; */
-  padding: 1px 0;
+  padding: 5px 0;
   border-bottom: 1px ridge;
   min-height: 200px; }
 
 .navbar {
-  background-color: #901CAD; }
+  background-color: #901CAD;
+  padding-top: 0rem;
+  padding-bottom: 0rem; }
 
-.nav-tabs {
-  border: 1px solid #DDD;
-  border-top: none;
-}
 .tab-content {
   border: 1px solid #DDD;
   border-top: none;
@@ -45,10 +41,27 @@ header h2 {
   background-color: rgba(0, 0, 0, 0.5); }
 
 .carousel {
-  border: solid #5637dd; }
+  border: solid #F8F9FA; }
 
 #carouselButton {
   position: absolute;
   right: 0;
   bottom: 0;
   z-index: 100; }
+
+.cardbgl {
+  background-color: #eeecfb; }
+
+.cardbgm {
+  background-color: #f5f5f9; }
+
+fieldset {
+  background: lavender;
+  border: 5px solid darkblue;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  width: 750px; }
+
+.divpad {
+  padding-right: 1rem;
+  padding-left: 1rem; }
