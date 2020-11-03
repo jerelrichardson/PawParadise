@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=K2D:wght@500&display=swap">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
     <!-- endbuild -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
 
     <title>Paw Paradise</title>
 </head>
@@ -45,22 +45,21 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form id="postForm">
+                    <form>
                         <!-- <h1>Enter the details of your item or pet service</h1> -->
                         <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post" enctype="multipart/form-data">
-                        <!-- <form action="/upload" method="post" enctype="multipart/form-data"> -->
                             <fieldset>
                                 <legend>Details of your item/service:</legend>
-                                <div class="divpad"> <!-- class="row" -->
+                                <div class="divpad"> 
                                     <label>Are you <u>offering</u> an item/service or do you <u>want</u> an item/service: </label> 
-                                    <div> <!-- class="col-sm-3" -->
+                                    <div> 
                                         <input type="radio" id="radioOffer" name=“wantOffer” value="offer" required/>
                                         <label for="radioOffer">Offer</label>
                                         <input type="radio" id="radioWant" name=“wantOffer” value="want"  />
                                         <label for="radioWant">Want</label>
                                     </div>
                                     <label>Is this post for an item, or a service: </label> 
-                                    <div > <!-- class="col-sm-3" -->
+                                    <div > 
                                         <input type="radio" id="radioItem" name=“itemService” value="item" required/>
                                         <label for="radioItem">Item</label>
                                         <input type="radio" id="radioService" name=“itemService” value="service" />
@@ -111,8 +110,12 @@
                                 <input class="btn btn-info" type="submit" value="submit"/>
                             </div>
                         </form>
-                        <script src="https://url.nucamp.co/datingjs"></script>
+                        <!-- <script src="https://url.nucamp.co/datingjs"></script> -->
                     </form>
+
+                    <!--<p>Click the "Try it" button to display the value of the first element in the form.</p>
+                     <button onclick="myFunction()">Try it</button> 
+                    <p id="demo"></p> -->
                 </div>
             </div>
           </div>
@@ -124,10 +127,10 @@
     <nav class="navbar navbar-expand-sm navbar-collapse navbar-dark sticky-top">
         <div class="container">
           <!--   <a class="navbar-brand" href="#"><img src="img/Orange-paw-icon.png" height="30" width="30" /></a> -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ppNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button> 
-            <div class="collapse navbar-collapse" id="nucampNavbar">
+            <div class="collapse navbar-collapse" id="ppNavbar">
                 <ul class="navbar-nav">  <!-- Use the Font-Awesome icons in the navbar -->
                     <li class="nav-item active"><a class="nav-link" href="#"> <i class="fa fa-home fa-lg"></i> home </a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#"> <i class="fa fa-group fa-lg"></i> groups </a></li> -->
@@ -238,29 +241,26 @@
                 <div class="tab-content">  
                     <div role="tabpanel" class="tab-pane fade show active" id="allitemstab">
                         <div id="accordionAllitems">
-                            <!-- <div class="card" style="background-color: #eeecfb;"> -->
-                            <div class="card cardbgm">
+                            <div class="card cardbgm"> 
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" data-toggle="collapse" data-target="#allitemscard1">
                                             Offer <small class="text-body"><u>Service</u>: Horseback riding</small>
-                                            <!-- OFFER <small class="text-body">Service: Horseback riding</small> -->
                                         </a>
                                     </h4>
                                     <div class="collapse show" id="allitemscard1" data-parent="#accordionAllitems">
                                         <div class="card-body">
                                             <img class="d-flex mr-3 img-thumbnail" width="250" src="img/Horse_5883702.jpg" alt="Post Image" />
-                                            <p class="d-sm-block text-15" >If you are interested in horses and want to try riding then give me a call. 
+                                            <p id="allitemscard1desc" class="d-sm-block text-15" >If you are interested in horses and want to try riding then give me a call. 
                                                 This is an introduction to horseback riding. If you like it and want to pursue more then we can make
                                                 some arrangements. Maybe help care for the horses or clean stalls in exchange for riding.</p>
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
-                                                        <p style="margin: 0px;">Area: West End</p> 
+                                                        <p id="allitemscard1area" style="margin: 0px;">Area: West End</p> 
                                                     </div>
                                                     <div class="col-sm">
-                                                        <p style="margin: 0px;">Name: Horsey Rancher</p>
+                                                        <p id="allitemscard1name" style="margin: 0px;">Name: Horsey Rancher</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -278,7 +278,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card cardbgl">
+                            <div class="card "> 
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="collapsed text-success font-weight-bolder" data-toggle="collapse" data-target="#allitemscard2">
@@ -292,7 +292,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Cary</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -327,7 +326,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Cary</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -349,8 +347,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="card" style="background-color: #f5f5f9;">  -->
-                            <div class="card cardbgl"> 
+                            <div class="card "> 
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="collapsed text-danger font-weight-bolder" data-toggle="collapse" data-target="#allitemscard4">
@@ -363,7 +360,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: West Durham</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -398,7 +394,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: West Raleigh</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -442,7 +437,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: West End</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -464,7 +458,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card cardbgl">
+                            <div class="card "> 
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard2">
@@ -479,7 +473,6 @@
                                                 <div class="container-fluid">  
                                                     <div class="row">
                                                         <div class="col-sm">
-                                                            <!-- <label for="card1Carea" >Area: West End</label> -->
                                                             <p style="margin: 0px;">Area: West Raleigh</p> 
                                                         </div>
                                                         <div class="col-sm">
@@ -514,7 +507,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Durham</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -536,7 +528,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card cardbgl">
+                            <div class="card ">
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-success font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#offerscard4">
@@ -550,7 +542,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Cary</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -586,7 +577,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Morrisville</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -626,7 +616,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Cary</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -648,7 +637,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card cardbgl">
+                            <div class="card "> 
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard2">
@@ -661,7 +650,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Morrisville</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -696,7 +684,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Cary</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -718,7 +705,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card cardbgl">
+                            <div class="card "> 
                                 <div role="tab" class="card-header">
                                     <h4>
                                         <a class="text-danger font-weight-bolder" class="collapsed" data-toggle="collapse" data-target="#wantscard4">
@@ -731,7 +718,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: West Durham</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -766,7 +752,6 @@
                                             <div class="container-fluid">  
                                                 <div class="row">
                                                     <div class="col-sm">
-                                                        <!-- <label for="card1Carea" >Area: West End</label> -->
                                                         <p style="margin: 0px;">Area: Raleigh</p> 
                                                     </div>
                                                     <div class="col-sm">
@@ -794,107 +779,14 @@
             </div>
         </div>
     </div>
-        <!-- <div class="row row-content align-items-center">
-            <div class="col-sm-4 order-sm-last col-md-3">
-                <h2 class="text-sm-right">Discover & Review</h2>
-            </div>
-            <div class="col">
-                <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />
-                    <div class="media-body align-self-center">
-                        <h3>Our Campsites</h3>
-                        <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row  row-content align-items-center">
-            <div class="col-sm-4 col-md-3">
-                <h2>Featured Campsites</h2>
-            </div>
-            <div class="col">
-                <div class="media">
-                    <div class="media-body align-self-center">
-                        <h3>React Lake Campground</h3>
-                        <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
-                    </div>
-                    <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="React Lake" />
-                </div>
-            </div>
-        </div>
-
-        <div class="row row-content align-items-center">
-            <div class="col-sm-4 order-sm-last col-md-3">
-                <h2 class="text-sm-right">Our Community Partners</h2>
-            </div>
-            <div class="col">
-                <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
-                    <div class="media-body align-self-center">
-                        <h3>Bootstrap Outfitters</h3>
-        				<p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-<!--        <div class="row row-content align-items-center">
-            <div class="col-sm-6 mx-auto">
-                <div class="card">
-                    <h3 class="card-header bg-info text-white">Reserve a Campsite</h3>
-                    <div class="card-body">
-                         <form id="postForm">
-                            <div class="form-group row">
-                                <label class="col-form-label col-sm-6" for="numCampers">Number of Campers</label>
-                                <div class="col">
-                                    <select class="form-control" name="numCampers" id="numCampers">
-                                        <option>Select...</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-form-label col-sm-6" for="date">Date</label>
-                                <div class="col-sm-6">
-                                    <input class="form-control" type="date" id="date" name="date" placeholder="mm/dd/yy">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col">
-                                    <button type="submit" class="btn btn-primary">Search</button>
-                                </div>
-                            </div>
-                        </form> 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
--->
+       
     <footer class="container-fluid site-footer">
         <div class="container">
             <div class="row">
-                <!-- <div class="col-4 col-sm-2 offset-1">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="aboutus.html">About</a></li>
-                        <li><a href="#">Sites</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div> -->
                 <div class="col-sm-4 text-center">
-                    <!-- <h5>Social</h5>  Use the Font-Awesome icons for social buttons -->
                     <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
                     <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
                     <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
-                    <!-- <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a> -->
                 </div>
                 <div class="col">  <!-- Use the Font-Awesome icons for contact buttons -->
                     <a role="button" class="btn btn-link" href="tel:+19195551234"><i class="fa fa-phone"></i> 1-919-555-1234</a>
@@ -909,7 +801,6 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/app.js"></script>
     <!-- endbuild -->
     
     <!-- <script>
@@ -917,7 +808,6 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script> -->
-    
 </body>
 
 </html>

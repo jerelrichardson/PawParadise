@@ -2,24 +2,24 @@ body {
   font-family: "Open Sans", sans-serif; }
 
 h1, h2, h3 {
-  font-family: "Lobster", cursive; }
+  font-family: "K2D", sans-serif; }
 
 header h1 {
-  color: orange; }
+  color: #FFA501; }
 
 header h2 {
   font-size: larger;
-  color: #551A8B; }
+  color: #FFA501; }
 
 .site-footer {
-  background-image: linear-gradient(white, #38bb33);
+  background-color: #4AAD52;
   padding: 20px 0; }
 
 .jumbotron {
   margin: 0;
   /* Remove space between Jumbotron surrounding elements */
   padding: 10px;
-  background-image: linear-gradient(to right, #38bb33, #38bb33, #CCFFCC);
+  background-color: #4AAD52;
   color: white; }
 
 .row-content {
@@ -28,7 +28,7 @@ header h2 {
   min-height: 200px; }
 
 .navbar {
-  background-color: #901CAD;
+  background-color: #4AAD52;
   padding-top: 0rem;
   padding-bottom: 0rem; }
 
@@ -56,7 +56,7 @@ header h2 {
   background-color: #f5f5f9; }
 
 fieldset {
-  background: lavender;
+  background: #C1DBE3;
   border: 5px solid darkblue;
   border-radius: 10px;
   margin-bottom: 5px; }
